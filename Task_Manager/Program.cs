@@ -1,13 +1,21 @@
-﻿using Task_Manager.Forms;
+﻿using System.Text;
+using Task_Manager.Services;
+using Task_Manager.UI;
 
 namespace Task_Manager;
 
-static class Program
+class Program
 {
-    [STAThread]
     static void Main()
     {
-        ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
+        Console.Title = "Менеджер задач";
+
+        string path = Path.Combine(AppContext.BaseDirectory, "tasks.txt");
+        var manager = new TaskManager(new TaskStorage(path));
+        manager.Load();
+
+        new ConsoleMenu(manager).Run();
     }
 }
