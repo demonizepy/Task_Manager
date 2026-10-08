@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Text;
+
+namespace Task_Manager;
 
 class Program
 {
-    const string FileName = "tasks.txt";
-
-    static Dictionary<int, string> tasks = new Dictionary<int, string>();
+    static TaskManager manager = new TaskManager("tasks.txt");
 
     static void Main()
     {
-        // без этого русские буквы в консоли могут превратиться в вопросики
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
         Console.Title = "Менеджер задач";
 
-        LoadTasks();
+        manager.Load();
 
         while (true)
         {
             ShowMenu();
-            SaveTasks();
+            manager.Save();
         }
     }
 
@@ -81,9 +77,9 @@ class Program
     {
         Console.WriteLine("\nЗадачи:");
 
-        foreach (var task in tasks)
+        foreach (TaskItem task in manager.GetAll())
         {
-            Console.WriteLine($"ID: {task.Key}, описание: {task.Value}");
+            Console.WriteLine(task);
         }
     }
 
@@ -126,15 +122,17 @@ class Program
             return;
         }
 
-        tasks[id] = description;
-        Console.WriteLine("Задача добавлена.");
+        if (manager.Add(id, description))
+            Console.WriteLine("Задача добавлена.");
+        else
+            Console.WriteLine("Задача с таким ID уже была, описание заменено.");
 
         Pause();
     }
 
     static void DeleteTask()
     {
-        if (tasks.Count == 0)
+        if (manager.Count == 0)
         {
             Console.WriteLine("\nЗадач пока нет.");
             Pause();
@@ -154,7 +152,7 @@ class Program
 
         if (int.TryParse(input, out int id))
         {
-            if (tasks.Remove(id))
+            if (manager.Remove(id))
                 Console.WriteLine("Задача удалена.");
             else
                 Console.WriteLine("Задача не найдена.");
@@ -175,7 +173,7 @@ class Program
         {
             if (int.TryParse(part.Trim(), out int id))
             {
-                if (tasks.Remove(id))
+                if (manager.Remove(id))
                     Console.WriteLine($"Задача {id} удалена.");
                 else
                     Console.WriteLine($"Задача {id} не найдена.");
@@ -191,7 +189,7 @@ class Program
 
     static void DisplayTasks()
     {
-        if (tasks.Count == 0)
+        if (manager.Count == 0)
         {
             Console.WriteLine("\nЗадач пока нет.");
             Pause();
@@ -204,7 +202,7 @@ class Program
 
     static void ClearAllTasks()
     {
-        if (tasks.Count == 0)
+        if (manager.Count == 0)
         {
             Console.WriteLine("\nЗадач пока нет.");
             Pause();
@@ -220,7 +218,7 @@ class Program
 
         if (ReadInt() == 1)
         {
-            tasks.Clear();
+            manager.Clear();
             Console.WriteLine("\nСписок очищен.");
         }
         else
@@ -229,33 +227,5 @@ class Program
         }
 
         Pause();
-    }
-
-    static void SaveTasks()
-    {
-        using (StreamWriter writer = new StreamWriter(FileName))
-        {
-            foreach (var task in tasks)
-            {
-                writer.WriteLine($"{task.Key}|{task.Value}");
-            }
-        }
-    }
-
-    static void LoadTasks()
-    {
-        if (!File.Exists(FileName))
-            return;
-
-        foreach (var line in File.ReadAllLines(FileName))
-        {
-            // раньше после | писался пробел, его надо обрезать
-            string[] parts = line.Split('|', 2);
-
-            if (parts.Length < 2 || !int.TryParse(parts[0], out int id))
-                continue;
-
-            tasks[id] = parts[1].Trim();
-        }
     }
 }
