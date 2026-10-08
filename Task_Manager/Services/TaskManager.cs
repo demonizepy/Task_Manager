@@ -19,6 +19,22 @@ public class TaskManager
         return tasks.Values.OrderBy(t => t.Id).ToList();
     }
 
+    public bool Contains(int id)
+    {
+        return tasks.ContainsKey(id);
+    }
+
+    // следующий свободный ID для подсказки в форме
+    public int GetNextId()
+    {
+        int max = tasks.Count == 0 ? 0 : tasks.Keys.Max();
+
+        if (max >= int.MaxValue)
+            return int.MaxValue;
+
+        return Math.Max(max, 0) + 1;
+    }
+
     // true - задача новая, false - заменили уже существующую
     public bool Add(int id, string description)
     {

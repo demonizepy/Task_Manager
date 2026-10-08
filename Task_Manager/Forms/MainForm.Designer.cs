@@ -27,6 +27,9 @@
             this.colId = new System.Windows.Forms.ColumnHeader();
             this.colDescription = new System.Windows.Forms.ColumnHeader();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnDeleteIds = new System.Windows.Forms.Button();
+            this.txtDeleteIds = new System.Windows.Forms.TextBox();
+            this.lblDeleteIds = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDeleteSelected = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -127,6 +130,8 @@
             this.listTasks.TabIndex = 1;
             this.listTasks.UseCompatibleStateImageBehavior = false;
             this.listTasks.View = System.Windows.Forms.View.Details;
+            this.listTasks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listTasks_KeyDown);
+            this.listTasks.Resize += new System.EventHandler(this.listTasks_Resize);
             // 
             // colId
             // 
@@ -140,6 +145,9 @@
             // 
             // panelBottom
             // 
+            this.panelBottom.Controls.Add(this.btnDeleteIds);
+            this.panelBottom.Controls.Add(this.txtDeleteIds);
+            this.panelBottom.Controls.Add(this.lblDeleteIds);
             this.panelBottom.Controls.Add(this.btnClear);
             this.panelBottom.Controls.Add(this.btnDeleteSelected);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -147,6 +155,37 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(720, 52);
             this.panelBottom.TabIndex = 2;
+            // 
+            // btnDeleteIds
+            // 
+            this.btnDeleteIds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteIds.Location = new System.Drawing.Point(596, 11);
+            this.btnDeleteIds.Name = "btnDeleteIds";
+            this.btnDeleteIds.Size = new System.Drawing.Size(110, 30);
+            this.btnDeleteIds.TabIndex = 4;
+            this.btnDeleteIds.Text = "Удалить по ID";
+            this.btnDeleteIds.UseVisualStyleBackColor = true;
+            this.btnDeleteIds.Click += new System.EventHandler(this.btnDeleteIds_Click);
+            // 
+            // txtDeleteIds
+            // 
+            this.txtDeleteIds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDeleteIds.Location = new System.Drawing.Point(476, 14);
+            this.txtDeleteIds.Name = "txtDeleteIds";
+            this.txtDeleteIds.Size = new System.Drawing.Size(114, 23);
+            this.txtDeleteIds.TabIndex = 3;
+            this.txtDeleteIds.Enter += new System.EventHandler(this.txtDeleteIds_Enter);
+            this.txtDeleteIds.Leave += new System.EventHandler(this.txtDeleteIds_Leave);
+            // 
+            // lblDeleteIds
+            // 
+            this.lblDeleteIds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDeleteIds.AutoSize = true;
+            this.lblDeleteIds.Location = new System.Drawing.Point(360, 18);
+            this.lblDeleteIds.Name = "lblDeleteIds";
+            this.lblDeleteIds.Size = new System.Drawing.Size(110, 15);
+            this.lblDeleteIds.TabIndex = 2;
+            this.lblDeleteIds.Text = "ID через запятую:";
             // 
             // btnClear
             // 
@@ -186,13 +225,14 @@
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 480);
             this.Controls.Add(this.listTasks);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupNew);
-            this.MinimumSize = new System.Drawing.Size(560, 360);
+            this.MinimumSize = new System.Drawing.Size(640, 360);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Менеджер задач";
@@ -220,6 +260,9 @@
         private System.Windows.Forms.ColumnHeader colId;
         private System.Windows.Forms.ColumnHeader colDescription;
         private System.Windows.Forms.Panel panelBottom;
+        private System.Windows.Forms.Button btnDeleteIds;
+        private System.Windows.Forms.TextBox txtDeleteIds;
+        private System.Windows.Forms.Label lblDeleteIds;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDeleteSelected;
         private System.Windows.Forms.StatusStrip statusStrip;
