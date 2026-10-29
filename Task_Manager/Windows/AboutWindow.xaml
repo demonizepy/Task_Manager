@@ -1,0 +1,21 @@
+﻿<Window x:Class="Task_Manager.Windows.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource About_Title}" Width="360"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource DialogWindow}">
+    <StackPanel Margin="20">
+        <TextBlock Text="{DynamicResource App_Title}" FontSize="18" FontWeight="SemiBold" />
+        <TextBlock x:Name="txtVersion" Style="{StaticResource SecondaryText}" Margin="0,2,0,12" />
+
+        <TextBlock Text="{DynamicResource About_Text}" TextWrapping="Wrap" />
+
+        <TextBlock Text="{DynamicResource About_Authors}" FontWeight="SemiBold" Margin="0,12,0,4" />
+        <TextBlock Text="demonizepy" />
+        <TextBlock Text="existing69" />
+        <TextBlock Text="shijuni" />
+
+        <Button Content="{DynamicResource Btn_Close}" IsDefault="True" IsCancel="True"
+                HorizontalAlignment="Right" Margin="0,16,0,0" />
+    </StackPanel>
+</Window>

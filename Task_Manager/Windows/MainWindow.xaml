@@ -1,0 +1,43 @@
+﻿<Window x:Class="Task_Manager.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource App_Title}"
+        Width="760" Height="480" MinWidth="680" MinHeight="360"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource BaseWindow}"
+        Loaded="Window_Loaded">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Padding="10,8" BorderThickness="0,0,0,1"
+                BorderBrush="{DynamicResource LineBrush}">
+            <DockPanel LastChildFill="False">
+                <Button Content="{DynamicResource Btn_Add}" Style="{StaticResource ToolbarButton}" Click="btnAdd_Click" />
+                <Button Content="{DynamicResource Btn_DeleteSelected}" Style="{StaticResource ToolbarButton}" Click="btnDeleteSelected_Click" />
+                <Button Content="{DynamicResource Btn_DeleteIds}" Style="{StaticResource ToolbarButton}" Click="btnDeleteIds_Click" />
+                <Button Content="{DynamicResource Btn_Clear}" Style="{StaticResource ToolbarButton}" Click="btnClear_Click" />
+                <Button DockPanel.Dock="Right" Content="{DynamicResource Btn_About}" Click="btnAbout_Click" />
+                <Button DockPanel.Dock="Right" Content="{DynamicResource Btn_Settings}" Margin="0,0,6,0" Click="btnSettings_Click" />
+            </DockPanel>
+        </Border>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="txtCount" />
+            </StatusBarItem>
+        </StatusBar>
+
+        <DataGrid x:Name="gridTasks" Margin="10" PreviewKeyDown="gridTasks_PreviewKeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="80" Binding="{Binding Id, Mode=OneWay}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource Col_Id}" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="*" Binding="{Binding Description, Mode=OneWay}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource Col_Description}" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

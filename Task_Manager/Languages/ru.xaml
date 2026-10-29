@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="App_Title">Менеджер задач</sys:String>
+
+    <sys:String x:Key="Btn_Add">Добавить…</sys:String>
+    <sys:String x:Key="Btn_DeleteSelected">Удалить выбранные</sys:String>
+    <sys:String x:Key="Btn_DeleteIds">Удалить по ID…</sys:String>
+    <sys:String x:Key="Btn_Clear">Очистить всё</sys:String>
+    <sys:String x:Key="Btn_Settings">Настройки…</sys:String>
+    <sys:String x:Key="Btn_About">О программе</sys:String>
+    <sys:String x:Key="Btn_Ok">ОК</sys:String>
+    <sys:String x:Key="Btn_Cancel">Отмена</sys:String>
+    <sys:String x:Key="Btn_Yes">Да</sys:String>
+    <sys:String x:Key="Btn_No">Нет</sys:String>
+    <sys:String x:Key="Btn_Close">Закрыть</sys:String>
+
+    <sys:String x:Key="Col_Id">ID</sys:String>
+    <sys:String x:Key="Col_Description">Описание</sys:String>
+
+    <sys:String x:Key="Status_Count">Задач: {0}</sys:String>
+
+    <sys:String x:Key="Add_Title">Новая задача</sys:String>
+    <sys:String x:Key="Add_Id">ID:</sys:String>
+    <sys:String x:Key="Add_Description">Описание:</sys:String>
+    <sys:String x:Key="Add_Button">Добавить</sys:String>
+
+    <sys:String x:Key="DeleteIds_Title">Удаление по ID</sys:String>
+    <sys:String x:Key="DeleteIds_Hint">Введите ID задач через запятую, например: 1, 2, 5</sys:String>
+    <sys:String x:Key="DeleteIds_Button">Удалить</sys:String>
+
+    <sys:String x:Key="Settings_Title">Настройки</sys:String>
+    <sys:String x:Key="Settings_Theme">Тема</sys:String>
+    <sys:String x:Key="Settings_ThemeLight">Светлая</sys:String>
+    <sys:String x:Key="Settings_ThemeDark">Тёмная</sys:String>
+    <sys:String x:Key="Settings_Language">Язык</sys:String>
+
+    <sys:String x:Key="About_Title">О программе</sys:String>
+    <sys:String x:Key="About_Text">Учебный проект: менеджер задач на C# и WPF.</sys:String>
+    <sys:String x:Key="About_Version">Версия {0}</sys:String>
+    <sys:String x:Key="About_Authors">Авторы:</sys:String>
+
+    <sys:String x:Key="Msg_BadId">ID должен быть целым числом больше нуля.</sys:String>
+    <sys:String x:Key="Msg_EmptyDescription">Введите описание задачи.</sys:String>
+    <sys:String x:Key="Msg_ReplaceTask">Задача с ID {0} уже есть. Заменить её описание?</sys:String>
+    <sys:String x:Key="Msg_SelectTasks">Сначала выберите задачи в списке.</sys:String>
+    <sys:String x:Key="Msg_EnterId">Введите хотя бы один ID.</sys:String>
+    <sys:String x:Key="Msg_ListEmpty">Список и так пустой.</sys:String>
+    <sys:String x:Key="Msg_ConfirmClear">Точно очистить весь список?</sys:String>
+    <sys:String x:Key="Msg_Removed">Удалено: {0}</sys:String>
+    <sys:String x:Key="Msg_NotFound">Не найдено: {0}</sys:String>
+    <sys:String x:Key="Msg_Invalid">Неверный ID: {0}</sys:String>
+    <sys:String x:Key="Msg_LoadError">Не удалось прочитать файл с задачами:</sys:String>
+    <sys:String x:Key="Msg_SaveError">Не удалось сохранить задачи в файл:</sys:String>
+    <sys:String x:Key="Msg_SettingsError">Не удалось сохранить настройки:</sys:String>
+
+</ResourceDictionary>

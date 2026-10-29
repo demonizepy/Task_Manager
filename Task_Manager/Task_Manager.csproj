@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<Version>7.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		
+		<Using Include="System.IO" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Task_Manager.Core\Task_Manager.Core.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="App_Title">Task Manager</sys:String>
+
+    <sys:String x:Key="Btn_Add">Add…</sys:String>
+    <sys:String x:Key="Btn_DeleteSelected">Delete selected</sys:String>
+    <sys:String x:Key="Btn_DeleteIds">Delete by ID…</sys:String>
+    <sys:String x:Key="Btn_Clear">Clear all</sys:String>
+    <sys:String x:Key="Btn_Settings">Settings…</sys:String>
+    <sys:String x:Key="Btn_About">About</sys:String>
+    <sys:String x:Key="Btn_Ok">OK</sys:String>
+    <sys:String x:Key="Btn_Cancel">Cancel</sys:String>
+    <sys:String x:Key="Btn_Yes">Yes</sys:String>
+    <sys:String x:Key="Btn_No">No</sys:String>
+    <sys:String x:Key="Btn_Close">Close</sys:String>
+
+    <sys:String x:Key="Col_Id">ID</sys:String>
+    <sys:String x:Key="Col_Description">Description</sys:String>
+
+    <sys:String x:Key="Status_Count">Tasks: {0}</sys:String>
+
+    <sys:String x:Key="Add_Title">New task</sys:String>
+    <sys:String x:Key="Add_Id">ID:</sys:String>
+    <sys:String x:Key="Add_Description">Description:</sys:String>
+    <sys:String x:Key="Add_Button">Add</sys:String>
+
+    <sys:String x:Key="DeleteIds_Title">Delete by ID</sys:String>
+    <sys:String x:Key="DeleteIds_Hint">Enter task IDs separated by commas, e.g. 1, 2, 5</sys:String>
+    <sys:String x:Key="DeleteIds_Button">Delete</sys:String>
+
+    <sys:String x:Key="Settings_Title">Settings</sys:String>
+    <sys:String x:Key="Settings_Theme">Theme</sys:String>
+    <sys:String x:Key="Settings_ThemeLight">Light</sys:String>
+    <sys:String x:Key="Settings_ThemeDark">Dark</sys:String>
+    <sys:String x:Key="Settings_Language">Language</sys:String>
+
+    <sys:String x:Key="About_Title">About</sys:String>
+    <sys:String x:Key="About_Text">Student project: a task manager written in C# and WPF.</sys:String>
+    <sys:String x:Key="About_Version">Version {0}</sys:String>
+    <sys:String x:Key="About_Authors">Authors:</sys:String>
+
+    <sys:String x:Key="Msg_BadId">ID must be a whole number greater than zero.</sys:String>
+    <sys:String x:Key="Msg_EmptyDescription">Enter a task description.</sys:String>
+    <sys:String x:Key="Msg_ReplaceTask">A task with ID {0} already exists. Replace its description?</sys:String>
+    <sys:String x:Key="Msg_SelectTasks">Select tasks in the list first.</sys:String>
+    <sys:String x:Key="Msg_EnterId">Enter at least one ID.</sys:String>
+    <sys:String x:Key="Msg_ListEmpty">The list is already empty.</sys:String>
+    <sys:String x:Key="Msg_ConfirmClear">Clear the whole list?</sys:String>
+    <sys:String x:Key="Msg_Removed">Deleted: {0}</sys:String>
+    <sys:String x:Key="Msg_NotFound">Not found: {0}</sys:String>
+    <sys:String x:Key="Msg_Invalid">Invalid ID: {0}</sys:String>
+    <sys:String x:Key="Msg_LoadError">Could not read the tasks file:</sys:String>
+    <sys:String x:Key="Msg_SaveError">Could not save tasks to the file:</sys:String>
+    <sys:String x:Key="Msg_SettingsError">Could not save the settings:</sys:String>
+
+</ResourceDictionary>

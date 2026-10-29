@@ -1,0 +1,21 @@
+﻿<Window x:Class="Task_Manager.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource Settings_Title}" Width="340"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource DialogWindow}">
+    <StackPanel Margin="20,16">
+        <TextBlock Text="{DynamicResource Settings_Theme}" Style="{StaticResource SectionHeader}" />
+        <RadioButton x:Name="rbLight" GroupName="Theme" Content="{DynamicResource Settings_ThemeLight}" />
+        <RadioButton x:Name="rbDark" GroupName="Theme" Content="{DynamicResource Settings_ThemeDark}" />
+
+        <TextBlock Text="{DynamicResource Settings_Language}" Style="{StaticResource SectionHeader}" Margin="0,12,0,6" />
+        <RadioButton x:Name="rbRussian" GroupName="Language" Content="Русский" />
+        <RadioButton x:Name="rbEnglish" GroupName="Language" Content="English" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <Button Content="{DynamicResource Btn_Ok}" IsDefault="True" Margin="0,0,8,0" Click="btnOk_Click" />
+            <Button Content="{DynamicResource Btn_Cancel}" IsCancel="True" />
+        </StackPanel>
+    </StackPanel>
+</Window>
